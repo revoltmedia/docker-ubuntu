@@ -1,5 +1,5 @@
 # docker-ubuntu
-An ubuntu 16.04 box with nginx, php-fpm, wp-cli and certbot installed.
+An ubuntu 16.04 box (from ubuntu:xenial) with nginx, php-fpm, wp-cli and certbot installed.
 
 docker pull revoltmedia/ubuntu
 
