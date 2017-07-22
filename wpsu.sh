@@ -1,2 +1,2 @@
 #!/bin/bash
-sudo -E -u www-data wp $*
+sudo -E -u www-data wpcli $*
