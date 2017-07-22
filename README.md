@@ -1,6 +1,8 @@
 # docker-ubuntu
 An ubuntu 16.04 box with nginx, php-fpm, wp-cli and certbot installed.
 
+docker pull revoltmedia/ubuntu
+
 Eventually options will be added to change the versions and which packages are installed.
 
 ## Currently installs:
