@@ -7,11 +7,10 @@ RUN add-apt-repository ppa:certbot/certbot -y && apt-get update
 RUN echo "installing WP-CLI"
 RUN curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
 RUN chmod +x wp-cli.phar
-RUN mv wp-cli.phar /usr/local/bin/wp
-RUN echo wp --info --allow-root
+RUN mv wp-cli.phar /usr/local/bin/wpcli
+RUN echo "adding wrapper for root wp-cli"
+COPY wpsu.sh /usr/local/bin/wp
+RUN chmod +x /usr/local/bin/wp
 
 RUN echo "installing certbot"
 RUN apt-get install -y certbot
-
-RUN echo "adding weekly cron job for cerbot renew --nginx Sundays at 04:01 & logging to /tmp/cron-certbot-renew.log"
-RUN (crontab -l 2>/dev/null; echo "1 4 * * 0 cerbot renew --nginx >> /tmp/cron-certbot-renew.log") | crontab -
