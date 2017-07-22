@@ -14,3 +14,7 @@ RUN chmod +x /usr/local/bin/wp
 
 RUN echo "installing certbot"
 RUN apt-get install -y certbot
+
+CMD ["nginx", "-g", "daemon off;"]
+
+RUN nginx
