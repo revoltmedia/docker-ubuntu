@@ -20,4 +20,4 @@ CMD ["nginx", "-g", "daemon off;"]
 RUN apt-get clean
 RUN rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-RUN nginx
+RUN nginx -v
